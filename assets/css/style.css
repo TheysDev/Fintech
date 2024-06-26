@@ -1,0 +1,96 @@
+* {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color:rgb(139, 137, 137);
+}
+:root {
+--text-color: #3dade6;
+}
+
+.sidebar {
+height: 100vh;
+background-color: #f8f9fa;
+}
+
+.btn-home {
+text-align: center;
+color: var(--text-color);
+font-size: 1.5rem;
+}
+
+.navbar-brand {
+display: flex;
+align-items: center;
+}
+
+.navbar-brand i {
+margin-right: 10px;
+}
+
+.nav-link {
+color: rgb(139, 137, 137);
+display: flex;
+align-items: center;
+}
+
+.color-icon {
+color: rgb(139, 137, 137);
+margin-right: 8px;
+}
+
+.icon-profile {
+margin-left: 10px;
+}
+
+.nav-link:hover .color-icon {
+color: var(--text-color);
+}
+
+.nav-link:hover{
+border-radius: 10px;
+background-color: rgba(94, 89, 89, 0.103);
+color: var(--text-color);
+}
+
+.dashboard-card {
+margin-bottom: 20px;
+}
+.table th, .table td {
+vertical-align: middle;
+}
+.table img {
+width: 40px;
+}
+
+.btn-home {
+text-align: center;
+}
+.selected {
+font-weight: bold;
+}
+
+.sticky-element {
+  position: -webkit-sticky; 
+  position: sticky; 
+  top: 20px; 
+  background-color: white; 
+  padding: 10px; 
+}
+
+@media (max-width: 768px) {
+
+:root {
+  font-size: 2vh;
+  font-size: 2vw;
+}
+
+.sidebar {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100%;
+}
+
+}

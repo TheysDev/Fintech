@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EasyWallet Dashboard</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4C+X2L0K/6b5rKs++K6/6Fp6ElPrF1Wos1neAT4ZjDwp0TbEfiKz8NfEqI1LbpfQLXbTg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-2 sticky-element sidebar" id="offcanvasSidebar">
+            <div class="mt-5 btn-home">
+                <h2>
+                    <a class="navbar-brand" href="./dashboard.html">
+                        <i class="fa-solid fa-wallet btn-home"></i>
+                        EasyWallet
+                    </a>
+                </h2>
+            </div>
+            <div>
+                <nav class="nav flex-column mt-5">
+                    <a class="nav-link selected" aria-current="page" href="./dashboard.html">
+                        <i class="fa-solid fa-cubes color-icon"></i>
+                        DashBoard
+                    </a>
+                    <a class="nav-link mt-3" href="#">
+                        <i class="fa-solid fa-chart-simple color-icon"></i>
+                        Relatórios
+                    </a>
+                    <a class="nav-link mt-3" href="./Movi.html">
+                        <i class="fa-solid fa-money-bill color-icon"></i>
+                        Movimentações
+                    </a>
+                    <a class="nav-link mt-3" href="#">
+                        <i class="fa-solid fa-chart-pie color-icon"></i>
+                        Metas Orçamentárias
+                    </a>
+                    <a class="nav-link mt-5" href="#">
+                        <i class="fa-solid fa-gear color-icon"></i>
+                        Configurações
+                    </a>
+                    <a class="nav-link mt-3" href="#">
+                        <i class="fa-solid fa-comment-dots color-icon"></i>
+                        Suporte
+                    </a>
+                </nav>
+            </div>
+        </div>
+        <div class="col-md-10 border">
+            <div class="p-4">
+                <!-- Inicio Header -->
+                <header>
+                    <nav class="navbar navbar-expand bg-body-">
+                        <div class="container-fluid">
+                            <h2>Dashboard</h2>
+                            <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+                                <ul class="navbar-nav gap-3">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">
+                                            <i class="fa-solid fa-calendar-days color-icon"></i>
+                                            Filtro de Data
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">
+                                            <i class="fa-solid fa-bell color-icon"></i>
+                                            Notificações
+                                        </a>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            Nome de Usuario
+                                            <i class="fa-solid fa-user icon-profile color-icon"></i>
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" href="#">Gerenciar Perfil</a></li>
+                                            <li><a class="dropdown-item" href="#">Dados da Conta</a></li>
+                                            <li><a class="dropdown-item" href="#">Sair</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                </header>
+            </div>
+            <!-- Conteúdo do Dashboard -->
+            <div class="row">
+                <!-- Gráico Section -->
+                <div class="col-md-8">
+                    <div class="card dashboard-card">
+                        <div class="card-body">
+                            <h5 class="card-title">Créditos x Débitos</h5>
+                            <h3>$2,810.00 <span class="text-success">(8.26%)</span></h3>
+                            <canvas id="revenueChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <!-- Conta Corrente Extrato -->
+                <div class="col-md-4">
+                    <div class="card dashboard-card">
+                        <div class="card-body">
+                            <h5 class="card-title">Extrato Bancário</h5>
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>Data</th>
+                                            <th>Descrição</th>
+                                            <th>Valor</th>
+                                            <th>Saldo</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>01/06/2024</td>
+                                            <td>Depósito</td>
+                                            <td class="text-success">$500.00</td>
+                                            <td class="text-success">$500.00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>02/06/2024</td>
+                                            <td>Pagamento de conta</td>
+                                            <td class="text-danger">-$150.00</td>
+                                            <td class="text-success">$350.00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>03/06/2024</td>
+                                            <td>Transferência recebida</td>
+                                            <td class="text-success">$300.00</td>
+                                            <td class="text-success">$650.00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>04/06/2024</td>
+                                            <td>Saque</td>
+                                            <td class="text-danger">-$100.00</td>
+                                            <td class="text-success">$550.00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>05/06/2024</td>
+                                            <td>Pagamento de serviço</td>
+                                            <td class="text-danger">-$50.00</td>
+                                            <td class="text-success">$500.00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>06/06/2024</td>
+                                            <td>Depósito</td>
+                                            <td class="text-success">$200.00</td>
+                                            <td class="text-success">$700.00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>07/06/2024</td>
+                                            <td>Transferência enviada</td>
+                                            <td class="text-danger">-$100.00</td>
+                                            <td class="text-success">$600.00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>08/06/2024</td>
+                                            <td>Transferência enviada</td>
+                                            <td class="text-danger">-$200.00</td>
+                                            <td class="text-success">$400.00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>09/06/2024</td>
+                                            <td>Depósito</td>
+                                            <td class="text-success">$300.00</td>
+                                            <td class="text-success">$700.00</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <!-- Total Débitos Section -->
+                <div class="col-md-4">
+                    <div class="card dashboard-card">
+                        <div class="card-body">
+                            <h5 class="card-title">Total Débitos</h5>
+                            <h3>R$ 600,00</h3>
+                            <p class="text-danger">(2.18%) Mais pagamentos do que o normal</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Total Créditos Section -->
+                <div class="col-md-4">
+                    <div class="card dashboard-card">
+                        <div class="card-body">
+                            <h5 class="card-title">Total Créditos</h5>
+                            <h3>R$ 1.300,00</h3>
+                            <p class="text-success">(8.26%) Mais recebimentos do que o normal</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Saldo Section -->
+                <div class="col-md-4">
+                    <div class="card dashboard-card">
+                        <div class="card-body">
+                            <h5 class="card-title">Saldo Conta Corrente</h5>
+                            <h3>R$ 700,00</h3>
+                            <p class="text-success">(3.06%) Maior que ultimo saldo</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <!-- Movimentações Section -->
+                <div class="col-md-12">
+                    <div class="card dashboard-card">
+                        <div class="card-body">
+                            <h5 class="card-title d-flex justify-content-between">Movimentações</h5>
+                            <div>
+                                <select class="form-control d-inline-block w-auto mb-3">
+                                    <option value="">Filtrar por Categoria</option>
+                                    <option value="deposito">Depósito</option>
+                                    <option value="pagamento-conta">Pagamento de Conta</option>
+                                    <option value="transferencia">Transferência</option>
+                                    <option value="saque">Saque</option>
+                                    <option value="servico">Pagamento de Serviço</option>
+                                </select>
+                                <input type="date" class="form-control d-inline-block w-auto">
+                                <button class="btn btn-primary">Adicionar Movimentação</button>
+                            </div>
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>Data</th>
+                                            <th>Valor</th>
+                                            <th>Categoria</th>
+                                            <th>Número da Conta</th>
+                                            <th>Descrição</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>01/06/2024</td>
+                                            <td class="text-success">$500.00</td>
+                                            <td>Depósito</td>
+                                            <td>123456-7</td>
+                                            <td>Depósito inicial</td>
+                                        </tr>
+                                        <tr>
+                                            <td>02/06/2024</td>
+                                            <td class="text-danger">-$150.00</td>
+                                            <td>Pagamento de conta</td>
+                                            <td>123456-7</td>
+                                            <td>Pagamento de eletricidade</td>
+                                        </tr>
+                                        <tr>
+                                            <td>03/06/2024</td>
+                                            <td class="text-success">$300.00</td>
+                                            <td>Transferência recebida</td>
+                                            <td>123456-7</td>
+                                            <td>Transferência de João</td>
+                                        </tr>
+                                        <tr>
+                                            <td>04/06/2024</td>
+                                            <td class="text-danger">-$100.00</td>
+                                            <td>Saque</td>
+                                            <td>123456-7</td>
+                                            <td>Saque no caixa eletrônico</td>
+                                        </tr>
+                                        <tr>
+                                            <td>05/06/2024</td>
+                                            <td class="text-danger">-$50.00</td>
+                                            <td>Pagamento de serviço</td>
+                                            <td>123456-7</td>
+                                            <td>Serviço de internet</td>
+                                        </tr>
+                                        <tr>
+                                            <td>06/06/2024</td>
+                                            <td class="text-success">$200.00</td>
+                                            <td>Depósito</td>
+                                            <td>123456-7</td>
+                                            <td>Depósito mensal</td>
+                                        </tr>
+                                        <tr>
+                                            <td>07/06/2024</td>
+                                            <td class="text-danger">-$100.00</td>
+                                            <td>Pagamento de conta</td>
+                                            <td>123456-7</td>
+                                            <td>Pagamento de água</td>
+                                        </tr>
+                                        <tr>
+                                            <td>08/06/2024</td>
+                                            <td class="text-danger">-$200.00</td>
+                                            <td>Transferência enviada</td>
+                                            <td>123456-7</td>
+                                            <td>Transferência para Maria</td>
+                                        </tr>
+                                        <tr>
+                                            <td>09/06/2024</td>
+                                            <td class="text-success">$300.00</td>
+                                            <td>Depósito</td>
+                                            <td>123456-7</td>
+                                            <td>Depósito mensal</td>
+                                        </tr>
+                                        <tr>
+                                            <td>10/06/2024</td>
+                                            <td class="text-danger">-$50.00</td>
+                                            <td>Pagamento de serviço</td>
+                                            <td>123456-7</td>
+                                            <td>Serviço de streaming</td>
+                                        </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://kit.fontawesome.com/02435d1c12.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="/assets/js/app.js"></script>
+</body>
+</html>
+
